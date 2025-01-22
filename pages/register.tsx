@@ -65,7 +65,7 @@ const Register = () => {
     if (image) formData.append('Image', image); // Include the image file if it exists
 
     try {
-      const response = await axios.post('http://localhost:5000/api/Home/register', formData, {
+      const response = await axios.post('http://localhost:5000/api/register', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
