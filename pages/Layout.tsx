@@ -9,7 +9,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   const handleLogout = () => {
     Cookies.remove('token');
-    router.push('/home');
+    router.push('/');
   };
 
   return (

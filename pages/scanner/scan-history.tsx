@@ -28,7 +28,7 @@ const ScanHistoryPage: React.FC = () => {
         }
 
         const response = await axios.get<{ $values: ScanHistoryEntry[] }>(
-          'http://localhost:5000/api/scanners/history',
+          'http://localhost:5000/api/scan-results',
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -84,7 +84,7 @@ const ScanHistoryPage: React.FC = () => {
                     </span>
                   </p>
                   <a
-                    href={`/scanner/scan-results?scanId=${entry.zapScanId}`}
+                    href={`/scanner/scan-results/${entry.zapScanId}`}
                     className={`text-indigo-400 hover:text-indigo-300 hover:underline ${
                       entry.zapScanId === null ? 'pointer-events-none text-gray-500' : ''
                     }`}

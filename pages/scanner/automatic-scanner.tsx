@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -31,7 +32,7 @@ const AutomaticScannerPage: React.FC = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/scanners/automatic-scanner',
+        'http://localhost:5000/api/scan-requests', // UPDATED ROUTE
         { url },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -83,32 +84,8 @@ const AutomaticScannerPage: React.FC = () => {
         </form>
         {error && <p className="text-red-500 mt-2">{error}</p>}
       </main>
-
-      {/* CSS for the spinner */}
-      <style jsx>{`
-        .loader {
-          display: inline-block;
-          width: 1rem;
-          height: 1rem;
-          border: 2px solid transparent;
-          border-top: 2px solid white;
-          border-radius: 50%;
-          animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
     </Layout>
   );
 };
 
 export default AutomaticScannerPage;
-
-

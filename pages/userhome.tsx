@@ -17,7 +17,7 @@ const Home = () => {
       router.push('/login');
     } else {
       axios
-        .get('http://localhost:5000/api/home', {
+        .get('http://localhost:5000/api', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
