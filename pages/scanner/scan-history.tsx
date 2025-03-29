@@ -28,7 +28,7 @@ const ScanHistoryPage: React.FC = () => {
         }
 
         const response = await axios.get<{ $values: ScanHistoryEntry[] }>(
-          'http://localhost:5000/api/scanners/history',
+          'https://scanwebsite.azurewebsites.net/api/scan-results',
           {
             headers: {
               Authorization: `Bearer ${token}`,
